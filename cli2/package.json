@@ -6,6 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "build--dev": "cross-env NODE_ENV=dev ENV_CONFIG=dev node build/build.js",
+    "build--test": "cross-env NODE_ENV=testing ENV_CONFIG=test node build/build.js",
+    "build--prod": "cross-env NODE_ENV=production ENV_CONFIG=prod node build/build.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -33,6 +36,7 @@
     "chalk": "^2.0.1",
     "chromedriver": "^2.27.2",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^7.0.2",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
