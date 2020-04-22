@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="rem">
-
+<a href="../static/biaoge.xlsx">ss</a>
     </div>
     <!-- <img src="./assets/logo.png">
     <router-view/> -->

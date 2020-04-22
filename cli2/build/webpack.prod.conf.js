@@ -11,9 +11,20 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const env = process.env.NODE_ENV === 'testing'
-  ? require('../config/test.env')
-  : require('../config/prod.env')
+// const env = process.env.NODE_ENV === 'testing'
+//   ? require('../config/test.env')
+//   : require('../config/prod.env')
+const env_config = process.env.ENV_CONFIG || ''; //鎵ц¡屼笉鍚岀殑鎵撳寘鑴氭湰瀵瑰簲涓嶅悓鐨別nv_config鍊¼
+switch (env_config){
+  case 'dev': 
+        var env= require('../config/dev.env');
+        break;
+  case 'prod': 
+        var env= require('../config/prod.env');
+        break;
+  default:
+      var env= require('../config/prod.env');
+}
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
